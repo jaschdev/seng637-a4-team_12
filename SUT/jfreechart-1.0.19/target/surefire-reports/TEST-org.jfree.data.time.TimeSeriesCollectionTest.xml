@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="12" failures="1" name="org.jfree.data.time.TimeSeriesCollectionTest" time="0.017" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="java.vm.version" value="17.0.18+8"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk/lib"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/bear/winterMeng/637Dependability/assignments/A4/Jfree/Assignment3-artifacts/jfreechart-1.0.19"/>
+    <property name="java.vm.vendor" value="Arch Linux"/>
+    <property name="java.vendor.url" value="https://openjdk.java.net/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/bear/winterMeng/637Dependability/assignments/A4/Jfree/Assignment3-artifacts/jfreechart-1.0.19"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.runtime.version" value="17.0.18+8"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="guice_custom_class_loading" value="CHILD"/>
+    <property name="classworlds.conf" value="/usr/share/java/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="ANSI_X3.4-1968"/>
+    <property name="java.library.path" value="/tmp/.mount_cursorBBc8zh/usr/lib/:/tmp/.mount_cursorBBc8zh/usr/lib32/:/tmp/.mount_cursorBBc8zh/usr/lib64/:/tmp/.mount_cursorBBc8zh/lib/:/tmp/.mount_cursorBBc8zh/lib/i386-linux-gnu/:/tmp/.mount_cursorBBc8zh/lib/x86_64-linux-gnu/:/tmp/.mount_cursorBBc8zh/lib/aarch64-linux-gnu/:/tmp/.mount_cursorBBc8zh/lib32/:/tmp/.mount_cursorBBc8zh/lib64/::/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/java/maven/conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="61.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="maven.repo.local" value=".m2/repository"/>
+    <property name="os.version" value="6.19.6-arch1-1"/>
+    <property name="library.jansi.path" value="/usr/share/java/maven/lib/jansi-native"/>
+    <property name="user.home" value="/home/bear"/>
+    <property name="user.timezone" value="America/Edmonton"/>
+    <property name="file.encoding" value="ANSI_X3.4-1968"/>
+    <property name="java.specification.version" value="17"/>
+    <property name="user.name" value="bear"/>
+    <property name="java.class.path" value="/usr/share/java/maven/boot/plexus-classworlds-2.9.0.jar"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="java.home" value="/usr/lib/jvm/java-17-openjdk"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="17.0.18"/>
+    <property name="native.encoding" value="ANSI_X3.4-1968"/>
+    <property name="java.vendor" value="Arch Linux"/>
+    <property name="sun.stderr.encoding" value="ANSI_X3.4-1968"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="maven.home" value="/usr/share/java/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.version.date" value="2026-01-20"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.stdout.encoding" value="ANSI_X3.4-1968"/>
+  </properties>
+  <testcase classname="org.jfree.data.time.TimeSeriesCollectionTest" name="testSerialization" time="0.009"/>
+  <testcase classname="org.jfree.data.time.TimeSeriesCollectionTest" name="testGetSurroundingItems" time="0"/>
+  <testcase classname="org.jfree.data.time.TimeSeriesCollectionTest" name="testBug3445507" time="0"/>
+  <testcase classname="org.jfree.data.time.TimeSeriesCollectionTest" name="testRemoveSeries_int" time="0"/>
+  <testcase classname="org.jfree.data.time.TimeSeriesCollectionTest" name="test1170825" time="0.001"/>
+  <testcase classname="org.jfree.data.time.TimeSeriesCollectionTest" name="testRemoveSeries" time="0"/>
+  <testcase classname="org.jfree.data.time.TimeSeriesCollectionTest" name="testCloning" time="0"/>
+  <testcase classname="org.jfree.data.time.TimeSeriesCollectionTest" name="testGetRangeBounds2" time="0"/>
+  <testcase classname="org.jfree.data.time.TimeSeriesCollectionTest" name="testGetRangeBounds" time="0"/>
+  <testcase classname="org.jfree.data.time.TimeSeriesCollectionTest" name="testFindDomainBounds" time="0.006">
+    <failure message="expected:&lt;1.199142E12&gt; but was:&lt;1.1991708E12&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;1.199142E12&gt; but was:&lt;1.1991708E12&gt;
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:743)
+	at org.junit.Assert.assertEquals(Assert.java:494)
+	at org.junit.Assert.assertEquals(Assert.java:592)
+	at org.jfree.data.time.TimeSeriesCollectionTest.testFindDomainBounds(TimeSeriesCollectionTest.java:330)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</failure>
+  </testcase>
+  <testcase classname="org.jfree.data.time.TimeSeriesCollectionTest" name="testEquals" time="0"/>
+  <testcase classname="org.jfree.data.time.TimeSeriesCollectionTest" name="testIndexOf" time="0"/>
+</testsuite>

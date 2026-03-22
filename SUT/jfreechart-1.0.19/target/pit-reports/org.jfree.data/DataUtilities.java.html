@@ -1,0 +1,5167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=US-ASCII">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>DataUtilities.java</h1>
+
+<table class="src">
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/* ===========================================================</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * JFreeChart : a free chart library for the Java(tm) platform</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * ===========================================================</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * (C) Copyright 2000-2013, by Object Refinery Limited and Contributors.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Project Info:  http://www.jfree.org/jfreechart/index.html</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * This library is free software; you can redistribute it and/or modify it</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * under the terms of the GNU Lesser General Public License as published by</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * the Free Software Foundation; either version 2.1 of the License, or</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * (at your option) any later version.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * This library is distributed in the hope that it will be useful, but</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * License for more details.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * You should have received a copy of the GNU Lesser General Public</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * License along with this library; if not, write to the Free Software</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * USA.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * [Oracle and Java are registered trademarks of Oracle and/or its affiliates. </span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Other names may be trademarks of their respective owners.]</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * ------------------</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * DataUtilities.java</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * ------------------</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * (C) Copyright 2003-2013, by Object Refinery Limited and contributors.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Original Author:  David Gilbert (for Object Refinery Limited);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Contributor(s):   Peter Kolb (patch 2511330);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Changes</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * -------</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * 05-Mar-2003 : Version 1 (DG);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * 03-Mar-2005 : Moved createNumberArray() and createNumberArray2D() methods</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *               from the DatasetUtilities class (DG);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * 17-May-2005 : Added calculateColumnTotal() and calculateRowTotal()</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *               methods (DG);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * 28-Jan-2009 : Added equal(double[][], double[][]) method (DG);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * 28-Jan-2009 : Added clone(double[][]) method (DG);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * 04-Feb-2009 : Added calculateColumnTotal/RowTotal variants (PK);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * 03-Jul-2013 : Use ParamChecks (DG);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package org.jfree.data;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_50'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.Arrays;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.jfree.chart.util.ParamChecks;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.jfree.data.general.DatasetUtilities;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_54'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_55'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Utility methods for use with some of the data classes (but not the datasets,</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * see {@link DatasetUtilities}).</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>public abstract class DataUtilities {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_62'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Tests two arrays for equality.  To be considered equal, the arrays must</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_63'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * have exactly the same dimensions, and the values in each array must also</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_64'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * match (two values that qre both NaN or both INF are considered equal</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_65'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * in this test).</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_66'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_67'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param a  the first array (&#60;code&#62;null&#60;/code&#62; permitted).</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_68'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param b  the second array (&#60;code&#62;null&#60;/code&#62; permitted).</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_69'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_70'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return A boolean.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_72'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @since 1.0.13</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_73'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_74'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static boolean equal(double[][] a, double[][] b) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_75'/>
+75
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_75'>3</a>
+<span>
+1. equal : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+2. equal : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+3. equal : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (a == null) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_76'/>
+76
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_76'>6</a>
+<span>
+1. equal : Substituted 1 with 0 &rarr; KILLED<br/>
+2. equal : replaced boolean return with true for org/jfree/data/DataUtilities::equal &rarr; KILLED<br/>
+3. equal : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+4. equal : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+5. equal : Substituted 0 with 1 &rarr; KILLED<br/>
+6. equal : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return (b == null);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_77'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_78'/>
+78
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_78'>3</a>
+<span>
+1. equal : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+2. equal : negated conditional &rarr; KILLED<br/>
+3. equal : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (b == null) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_79'/>
+79
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_79'>2</a>
+<span>
+1. equal : replaced boolean return with true for org/jfree/data/DataUtilities::equal &rarr; KILLED<br/>
+2. equal : Substituted 0 with 1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return false;  // already know &#39;a&#39; isn&#39;t null</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_80'/>
+80
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_80'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_81'/>
+81
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_81'>3</a>
+<span>
+1. equal : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+2. equal : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+3. equal : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (a.length != b.length) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_82'/>
+82
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_82'>2</a>
+<span>
+1. equal : Substituted 0 with 1 &rarr; KILLED<br/>
+2. equal : replaced boolean return with true for org/jfree/data/DataUtilities::equal &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return false;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_83'/>
+83
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_83'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_84'/>
+84
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_84'>5</a>
+<span>
+1. equal : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+2. equal : Substituted 0 with 1 &rarr; KILLED<br/>
+3. equal : changed conditional boundary &rarr; KILLED<br/>
+4. equal : negated conditional &rarr; KILLED<br/>
+5. equal : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (int i = 0; i &#60; a.length; i++) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_85'/>
+85
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_85'>4</a>
+<span>
+1. equal : removed call to java/util/Arrays::equals &rarr; KILLED<br/>
+2. equal : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+3. equal : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+4. equal : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (!Arrays.equals(a[i], b[i])) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_86'/>
+86
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_86'>2</a>
+<span>
+1. equal : Substituted 0 with 1 &rarr; KILLED<br/>
+2. equal : replaced boolean return with true for org/jfree/data/DataUtilities::equal &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                return false;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_87'/>
+87
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_87'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_88'/>
+88
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_88'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_89'/>
+89
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_89'>2</a>
+<span>
+1. equal : replaced boolean return with false for org/jfree/data/DataUtilities::equal &rarr; KILLED<br/>
+2. equal : Substituted 1 with 0 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return true;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_90'/>
+90
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_90'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_91'/>
+91
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_91'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_92'/>
+92
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_92'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_93'/>
+93
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_93'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Returns a clone of the specified array.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_94'/>
+94
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_94'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_95'/>
+95
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_95'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param source  the source array (&#60;code&#62;null&#60;/code&#62; not permitted).</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_96'/>
+96
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_96'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_97'/>
+97
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_97'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return A clone of the array.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_98'/>
+98
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_98'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_99'/>
+99
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_99'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @since 1.0.13</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_100'/>
+100
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_100'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_101'/>
+101
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_101'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static double[][] clone(double[][] source) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_102'/>
+102
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_102'>1</a>
+<span>
+1. clone : removed call to org/jfree/chart/util/ParamChecks::nullNotPermitted &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        ParamChecks.nullNotPermitted(source, &#34;source&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_103'/>
+103
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_103'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        double[][] clone = new double[source.length][];</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_104'/>
+104
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_104'>5</a>
+<span>
+1. clone : negated conditional &rarr; KILLED<br/>
+2. clone : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+3. clone : changed conditional boundary &rarr; KILLED<br/>
+4. clone : Substituted 0 with 1 &rarr; KILLED<br/>
+5. clone : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (int i = 0; i &#60; source.length; i++) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_105'/>
+105
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_105'>3</a>
+<span>
+1. clone : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+2. clone : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+3. clone : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (source[i] != null) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_106'/>
+106
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_106'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                double[] row = new double[source[i].length];</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_107'/>
+107
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_107'>3</a>
+<span>
+1. clone : Substituted 0 with 1 &rarr; KILLED<br/>
+2. clone : Substituted 0 with 1 &rarr; KILLED<br/>
+3. clone : removed call to java/lang/System::arraycopy &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                System.arraycopy(source[i], 0, row, 0, source[i].length);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_108'/>
+108
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_108'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                clone[i] = row;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_109'/>
+109
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_109'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_110'/>
+110
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_110'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_111'/>
+111
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_111'>1</a>
+<span>
+1. clone : replaced return value with null for org/jfree/data/DataUtilities::clone &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return clone;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_112'/>
+112
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_112'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_113'/>
+113
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_113'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_114'/>
+114
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_114'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_115'/>
+115
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_115'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Returns the total of the values in one column of the supplied data</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_116'/>
+116
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_116'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * table.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_117'/>
+117
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_117'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_118'/>
+118
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_118'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param data  the table of values (&#60;code&#62;null&#60;/code&#62; not permitted).</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_119'/>
+119
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_119'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param column  the column index (zero-based).</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_120'/>
+120
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_120'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_121'/>
+121
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_121'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return The total of the values in the specified column.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_122'/>
+122
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_122'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_123'/>
+123
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_123'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static double calculateColumnTotal(Values2D data, int column) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_124'/>
+124
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_124'>1</a>
+<span>
+1. calculateColumnTotal : removed call to org/jfree/chart/util/ParamChecks::nullNotPermitted &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        ParamChecks.nullNotPermitted(data, &#34;data&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_125'/>
+125
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_125'>1</a>
+<span>
+1. calculateColumnTotal : Substituted 0.0 with 1.0 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        double total = 0.0;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_126'/>
+126
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_126'>1</a>
+<span>
+1. calculateColumnTotal : removed call to org/jfree/data/Values2D::getRowCount &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        int rowCount = data.getRowCount();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_127'/>
+127
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_127'>5</a>
+<span>
+1. calculateColumnTotal : negated conditional &rarr; KILLED<br/>
+2. calculateColumnTotal : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+3. calculateColumnTotal : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+4. calculateColumnTotal : Substituted 0 with 1 &rarr; KILLED<br/>
+5. calculateColumnTotal : changed conditional boundary &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (int r = 0; r &#60; rowCount; r++) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_128'/>
+128
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_128'>1</a>
+<span>
+1. calculateColumnTotal : removed call to org/jfree/data/Values2D::getValue &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            Number n = data.getValue(r, column);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_129'/>
+129
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_129'>3</a>
+<span>
+1. calculateColumnTotal : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+2. calculateColumnTotal : negated conditional &rarr; KILLED<br/>
+3. calculateColumnTotal : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (n != null) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_130'/>
+130
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_130'>2</a>
+<span>
+1. calculateColumnTotal : removed call to java/lang/Number::doubleValue &rarr; KILLED<br/>
+2. calculateColumnTotal : Replaced double addition with subtraction &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                total += n.doubleValue();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_131'/>
+131
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_131'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_132'/>
+132
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_132'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_133'/>
+133
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_133'>1</a>
+<span>
+1. calculateColumnTotal : replaced double return with 0.0d for org/jfree/data/DataUtilities::calculateColumnTotal &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return total;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_134'/>
+134
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_134'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_135'/>
+135
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_135'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_136'/>
+136
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_136'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_137'/>
+137
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_137'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Returns the total of the values in one column of the supplied data</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_138'/>
+138
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_138'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * table by taking only the row numbers in the array into account.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_139'/>
+139
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_139'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_140'/>
+140
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_140'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param data  the table of values (&#60;code&#62;null&#60;/code&#62; not permitted).</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_141'/>
+141
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_141'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param column  the column index (zero-based).</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_142'/>
+142
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_142'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param validRows the array with valid rows (zero-based).</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_143'/>
+143
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_143'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_144'/>
+144
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_144'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return The total of the valid values in the specified column.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_145'/>
+145
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_145'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_146'/>
+146
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_146'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @since 1.0.13</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_147'/>
+147
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_147'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_148'/>
+148
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_148'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static double calculateColumnTotal(Values2D data, int column,</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_149'/>
+149
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_149'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>             int[] validRows) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_150'/>
+150
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_150'>1</a>
+<span>
+1. calculateColumnTotal : removed call to org/jfree/chart/util/ParamChecks::nullNotPermitted &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        ParamChecks.nullNotPermitted(data, &#34;data&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_151'/>
+151
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_151'>1</a>
+<span>
+1. calculateColumnTotal : Substituted 0.0 with 1.0 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        double total = 0.0;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_152'/>
+152
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_152'>1</a>
+<span>
+1. calculateColumnTotal : removed call to org/jfree/data/Values2D::getRowCount &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        int rowCount = data.getRowCount();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_153'/>
+153
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_153'>5</a>
+<span>
+1. calculateColumnTotal : Substituted 0 with 1 &rarr; KILLED<br/>
+2. calculateColumnTotal : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+3. calculateColumnTotal : changed conditional boundary &rarr; KILLED<br/>
+4. calculateColumnTotal : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+5. calculateColumnTotal : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (int v = 0; v &#60; validRows.length; v++) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_154'/>
+154
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_154'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            int row = validRows[v];</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_155'/>
+155
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_155'>4</a>
+<span>
+1. calculateColumnTotal : changed conditional boundary &rarr; SURVIVED<br/>
+2. calculateColumnTotal : removed conditional - replaced comparison check with true &rarr; SURVIVED<br/>
+3. calculateColumnTotal : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+4. calculateColumnTotal : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            if (row &#60; rowCount) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_156'/>
+156
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_156'>1</a>
+<span>
+1. calculateColumnTotal : removed call to org/jfree/data/Values2D::getValue &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                Number n = data.getValue(row, column);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_157'/>
+157
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_157'>3</a>
+<span>
+1. calculateColumnTotal : removed conditional - replaced equality check with true &rarr; SURVIVED<br/>
+2. calculateColumnTotal : negated conditional &rarr; KILLED<br/>
+3. calculateColumnTotal : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                if (n != null) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_158'/>
+158
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_158'>2</a>
+<span>
+1. calculateColumnTotal : removed call to java/lang/Number::doubleValue &rarr; KILLED<br/>
+2. calculateColumnTotal : Replaced double addition with subtraction &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                    total += n.doubleValue();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_159'/>
+159
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_159'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_160'/>
+160
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_160'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_161'/>
+161
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_161'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_162'/>
+162
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_162'>1</a>
+<span>
+1. calculateColumnTotal : replaced double return with 0.0d for org/jfree/data/DataUtilities::calculateColumnTotal &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return total;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_163'/>
+163
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_163'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_164'/>
+164
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_164'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_165'/>
+165
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_165'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_166'/>
+166
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_166'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Returns the total of the values in one row of the supplied data</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_167'/>
+167
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_167'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * table.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_168'/>
+168
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_168'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_169'/>
+169
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_169'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param data  the table of values (&#60;code&#62;null&#60;/code&#62; not permitted).</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_170'/>
+170
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_170'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param row  the row index (zero-based).</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_171'/>
+171
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_171'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_172'/>
+172
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_172'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return The total of the values in the specified row.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_173'/>
+173
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_173'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_174'/>
+174
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_174'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static double calculateRowTotal(Values2D data, int row) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_175'/>
+175
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_175'>1</a>
+<span>
+1. calculateRowTotal : removed call to org/jfree/chart/util/ParamChecks::nullNotPermitted &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        ParamChecks.nullNotPermitted(data, &#34;data&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_176'/>
+176
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_176'>1</a>
+<span>
+1. calculateRowTotal : Substituted 0.0 with 1.0 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        double total = 0.0;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_177'/>
+177
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_177'>1</a>
+<span>
+1. calculateRowTotal : removed call to org/jfree/data/Values2D::getColumnCount &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        int columnCount = data.getColumnCount();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_178'/>
+178
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_178'>5</a>
+<span>
+1. calculateRowTotal : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+2. calculateRowTotal : changed conditional boundary &rarr; KILLED<br/>
+3. calculateRowTotal : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+4. calculateRowTotal : negated conditional &rarr; KILLED<br/>
+5. calculateRowTotal : Substituted 0 with 1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (int c = 0; c &#60; columnCount; c++) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_179'/>
+179
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_179'>1</a>
+<span>
+1. calculateRowTotal : removed call to org/jfree/data/Values2D::getValue &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            Number n = data.getValue(row, c);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_180'/>
+180
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_180'>3</a>
+<span>
+1. calculateRowTotal : negated conditional &rarr; KILLED<br/>
+2. calculateRowTotal : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+3. calculateRowTotal : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (n != null) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_181'/>
+181
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_181'>2</a>
+<span>
+1. calculateRowTotal : Replaced double addition with subtraction &rarr; KILLED<br/>
+2. calculateRowTotal : removed call to java/lang/Number::doubleValue &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                total += n.doubleValue();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_182'/>
+182
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_182'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_183'/>
+183
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_183'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_184'/>
+184
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_184'>1</a>
+<span>
+1. calculateRowTotal : replaced double return with 0.0d for org/jfree/data/DataUtilities::calculateRowTotal &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return total;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_185'/>
+185
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_185'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_186'/>
+186
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_186'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_187'/>
+187
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_187'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_188'/>
+188
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_188'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Returns the total of the values in one row of the supplied data</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_189'/>
+189
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_189'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * table by taking only the column numbers in the array into account.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_190'/>
+190
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_190'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_191'/>
+191
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_191'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param data  the table of values (&#60;code&#62;null&#60;/code&#62; not permitted).</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_192'/>
+192
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_192'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param row  the row index (zero-based).</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_193'/>
+193
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_193'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param validCols the array with valid cols (zero-based).</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_194'/>
+194
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_194'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_195'/>
+195
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_195'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return The total of the valid values in the specified row.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_196'/>
+196
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_196'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_197'/>
+197
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_197'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @since 1.0.13</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_198'/>
+198
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_198'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_199'/>
+199
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_199'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static double calculateRowTotal(Values2D data, int row,</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_200'/>
+200
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_200'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>             int[] validCols) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_201'/>
+201
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_201'>1</a>
+<span>
+1. calculateRowTotal : removed call to org/jfree/chart/util/ParamChecks::nullNotPermitted &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        ParamChecks.nullNotPermitted(data, &#34;data&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_202'/>
+202
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_202'>1</a>
+<span>
+1. calculateRowTotal : Substituted 0.0 with 1.0 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        double total = 0.0;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_203'/>
+203
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_203'>1</a>
+<span>
+1. calculateRowTotal : removed call to org/jfree/data/Values2D::getColumnCount &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        int colCount = data.getColumnCount();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_204'/>
+204
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_204'>5</a>
+<span>
+1. calculateRowTotal : negated conditional &rarr; KILLED<br/>
+2. calculateRowTotal : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+3. calculateRowTotal : changed conditional boundary &rarr; KILLED<br/>
+4. calculateRowTotal : Substituted 0 with 1 &rarr; KILLED<br/>
+5. calculateRowTotal : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (int v = 0; v &#60; validCols.length; v++) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_205'/>
+205
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_205'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            int col = validCols[v];</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_206'/>
+206
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_206'>4</a>
+<span>
+1. calculateRowTotal : changed conditional boundary &rarr; SURVIVED<br/>
+2. calculateRowTotal : removed conditional - replaced comparison check with true &rarr; SURVIVED<br/>
+3. calculateRowTotal : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+4. calculateRowTotal : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            if (col &#60; colCount) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_207'/>
+207
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_207'>1</a>
+<span>
+1. calculateRowTotal : removed call to org/jfree/data/Values2D::getValue &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                Number n = data.getValue(row, col);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_208'/>
+208
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_208'>3</a>
+<span>
+1. calculateRowTotal : removed conditional - replaced equality check with true &rarr; SURVIVED<br/>
+2. calculateRowTotal : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+3. calculateRowTotal : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                if (n != null) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_209'/>
+209
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_209'>2</a>
+<span>
+1. calculateRowTotal : Replaced double addition with subtraction &rarr; KILLED<br/>
+2. calculateRowTotal : removed call to java/lang/Number::doubleValue &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                    total += n.doubleValue();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_210'/>
+210
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_210'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_211'/>
+211
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_211'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_212'/>
+212
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_212'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_213'/>
+213
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_213'>1</a>
+<span>
+1. calculateRowTotal : replaced double return with 0.0d for org/jfree/data/DataUtilities::calculateRowTotal &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return total;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_214'/>
+214
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_214'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_215'/>
+215
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_215'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_216'/>
+216
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_216'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_217'/>
+217
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_217'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Constructs an array of &#60;code&#62;Number&#60;/code&#62; objects from an array of</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_218'/>
+218
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_218'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * &#60;code&#62;double&#60;/code&#62; primitives.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_219'/>
+219
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_219'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_220'/>
+220
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_220'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param data  the data (&#60;code&#62;null&#60;/code&#62; not permitted).</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_221'/>
+221
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_221'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_222'/>
+222
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_222'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return An array of &#60;code&#62;Double&#60;/code&#62;.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_223'/>
+223
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_223'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_224'/>
+224
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_224'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static Number[] createNumberArray(double[] data) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_225'/>
+225
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_225'>1</a>
+<span>
+1. createNumberArray : removed call to org/jfree/chart/util/ParamChecks::nullNotPermitted &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        ParamChecks.nullNotPermitted(data, &#34;data&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_226'/>
+226
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_226'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        Number[] result = new Number[data.length];</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_227'/>
+227
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_227'>5</a>
+<span>
+1. createNumberArray : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+2. createNumberArray : negated conditional &rarr; KILLED<br/>
+3. createNumberArray : changed conditional boundary &rarr; KILLED<br/>
+4. createNumberArray : Substituted 0 with 1 &rarr; KILLED<br/>
+5. createNumberArray : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (int i = 0; i &#60; data.length; i++) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_228'/>
+228
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_228'>1</a>
+<span>
+1. createNumberArray : removed call to java/lang/Double::&#60;init&#62; &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            result[i] = new Double(data[i]);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_229'/>
+229
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_229'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_230'/>
+230
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_230'>1</a>
+<span>
+1. createNumberArray : replaced return value with null for org/jfree/data/DataUtilities::createNumberArray &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return result;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_231'/>
+231
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_231'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_232'/>
+232
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_232'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_233'/>
+233
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_233'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_234'/>
+234
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_234'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Constructs an array of arrays of &#60;code&#62;Number&#60;/code&#62; objects from a</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_235'/>
+235
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_235'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * corresponding structure containing &#60;code&#62;double&#60;/code&#62; primitives.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_236'/>
+236
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_236'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_237'/>
+237
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_237'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param data  the data (&#60;code&#62;null&#60;/code&#62; not permitted).</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_238'/>
+238
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_238'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_239'/>
+239
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_239'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return An array of &#60;code&#62;Double&#60;/code&#62;.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_240'/>
+240
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_240'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_241'/>
+241
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_241'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static Number[][] createNumberArray2D(double[][] data) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_242'/>
+242
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_242'>1</a>
+<span>
+1. createNumberArray2D : removed call to org/jfree/chart/util/ParamChecks::nullNotPermitted &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        ParamChecks.nullNotPermitted(data, &#34;data&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_243'/>
+243
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_243'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        int l1 = data.length;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_244'/>
+244
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_244'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        Number[][] result = new Number[l1][];</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_245'/>
+245
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_245'>5</a>
+<span>
+1. createNumberArray2D : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+2. createNumberArray2D : changed conditional boundary &rarr; KILLED<br/>
+3. createNumberArray2D : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+4. createNumberArray2D : negated conditional &rarr; KILLED<br/>
+5. createNumberArray2D : Substituted 0 with 1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (int i = 0; i &#60; l1; i++) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_246'/>
+246
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_246'>1</a>
+<span>
+1. createNumberArray2D : removed call to org/jfree/data/DataUtilities::createNumberArray &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            result[i] = createNumberArray(data[i]);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_247'/>
+247
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_247'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_248'/>
+248
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_248'>1</a>
+<span>
+1. createNumberArray2D : replaced return value with null for org/jfree/data/DataUtilities::createNumberArray2D &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return result;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_249'/>
+249
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_249'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_250'/>
+250
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_250'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_251'/>
+251
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_251'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_252'/>
+252
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_252'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Returns a {@link KeyedValues} instance that contains the cumulative</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_253'/>
+253
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_253'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * percentage values for the data in another {@link KeyedValues} instance.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_254'/>
+254
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_254'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * &#60;p&#62;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_255'/>
+255
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_255'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * The percentages are values between 0.0 and 1.0 (where 1.0 = 100%).</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_256'/>
+256
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_256'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_257'/>
+257
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_257'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param data  the data (&#60;code&#62;null&#60;/code&#62; not permitted).</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_258'/>
+258
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_258'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_259'/>
+259
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_259'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return The cumulative percentages.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_260'/>
+260
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_260'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_261'/>
+261
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_261'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static KeyedValues getCumulativePercentages(KeyedValues data) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_262'/>
+262
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_262'>1</a>
+<span>
+1. getCumulativePercentages : removed call to org/jfree/chart/util/ParamChecks::nullNotPermitted &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        ParamChecks.nullNotPermitted(data, &#34;data&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_263'/>
+263
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_263'>1</a>
+<span>
+1. getCumulativePercentages : removed call to org/jfree/data/DefaultKeyedValues::&#60;init&#62; &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        DefaultKeyedValues result = new DefaultKeyedValues();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_264'/>
+264
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_264'>1</a>
+<span>
+1. getCumulativePercentages : Substituted 0.0 with 1.0 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        double total = 0.0;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_265'/>
+265
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_265'>6</a>
+<span>
+1. getCumulativePercentages : negated conditional &rarr; KILLED<br/>
+2. getCumulativePercentages : changed conditional boundary &rarr; KILLED<br/>
+3. getCumulativePercentages : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+4. getCumulativePercentages : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+5. getCumulativePercentages : removed call to org/jfree/data/KeyedValues::getItemCount &rarr; KILLED<br/>
+6. getCumulativePercentages : Substituted 0 with 1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (int i = 0; i &#60; data.getItemCount(); i++) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_266'/>
+266
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_266'>1</a>
+<span>
+1. getCumulativePercentages : removed call to org/jfree/data/KeyedValues::getValue &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            Number v = data.getValue(i);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_267'/>
+267
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_267'>3</a>
+<span>
+1. getCumulativePercentages : removed conditional - replaced equality check with true &rarr; SURVIVED<br/>
+2. getCumulativePercentages : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+3. getCumulativePercentages : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            if (v != null) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_268'/>
+268
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_268'>2</a>
+<span>
+1. getCumulativePercentages : removed call to java/lang/Number::doubleValue &rarr; KILLED<br/>
+2. getCumulativePercentages : Replaced double addition with subtraction &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                total = total + v.doubleValue();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_269'/>
+269
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_269'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_270'/>
+270
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_270'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_271'/>
+271
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_271'>1</a>
+<span>
+1. getCumulativePercentages : Substituted 0.0 with 1.0 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        double runningTotal = 0.0;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_272'/>
+272
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_272'>6</a>
+<span>
+1. getCumulativePercentages : Substituted 0 with 1 &rarr; KILLED<br/>
+2. getCumulativePercentages : negated conditional &rarr; KILLED<br/>
+3. getCumulativePercentages : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+4. getCumulativePercentages : changed conditional boundary &rarr; KILLED<br/>
+5. getCumulativePercentages : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+6. getCumulativePercentages : removed call to org/jfree/data/KeyedValues::getItemCount &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (int i = 0; i &#60; data.getItemCount(); i++) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_273'/>
+273
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_273'>1</a>
+<span>
+1. getCumulativePercentages : removed call to org/jfree/data/KeyedValues::getValue &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            Number v = data.getValue(i);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_274'/>
+274
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_274'>3</a>
+<span>
+1. getCumulativePercentages : removed conditional - replaced equality check with true &rarr; SURVIVED<br/>
+2. getCumulativePercentages : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+3. getCumulativePercentages : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            if (v != null) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_275'/>
+275
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_275'>2</a>
+<span>
+1. getCumulativePercentages : Replaced double addition with subtraction &rarr; KILLED<br/>
+2. getCumulativePercentages : removed call to java/lang/Number::doubleValue &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                runningTotal = runningTotal + v.doubleValue();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_276'/>
+276
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_276'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_277'/>
+277
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_277'>4</a>
+<span>
+1. getCumulativePercentages : Replaced double division with multiplication &rarr; KILLED<br/>
+2. getCumulativePercentages : removed call to java/lang/Double::&#60;init&#62; &rarr; KILLED<br/>
+3. getCumulativePercentages : removed call to org/jfree/data/DefaultKeyedValues::addValue &rarr; KILLED<br/>
+4. getCumulativePercentages : removed call to org/jfree/data/KeyedValues::getKey &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            result.addValue(data.getKey(i), new Double(runningTotal / total));</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_278'/>
+278
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_278'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_279'/>
+279
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_279'>1</a>
+<span>
+1. getCumulativePercentages : replaced return value with null for org/jfree/data/DataUtilities::getCumulativePercentages &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return result;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_280'/>
+280
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_280'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_281'/>
+281
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_281'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@9f0fc36_282'/>
+282
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_282'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_75'>75</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_75'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualBothNull(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced equality check with false &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualSameArrays(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced equality check with true &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualBothNull(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_76'>76</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_76'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualBothNull(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 1 with 0 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualFirstNull(org.jfree.data.DataUtilitiesTest)</span></span> replaced boolean return with true for org/jfree/data/DataUtilities::equal &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualFirstNull(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced equality check with true &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualBothNull(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced equality check with false &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualFirstNull(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0 with 1 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualBothNull(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_78'>78</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_78'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualSameArrays(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced equality check with true &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualSameArrays(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualSecondNull(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced equality check with false &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_79'>79</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_79'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualSecondNull(org.jfree.data.DataUtilitiesTest)</span></span> replaced boolean return with true for org/jfree/data/DataUtilities::equal &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualSecondNull(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0 with 1 &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_81'>81</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_81'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualDifferentLengths(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced equality check with false &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualSameArrays(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced equality check with true &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualSameArrays(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_82'>82</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_82'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualDifferentLengths(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0 with 1 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualDifferentLengths(org.jfree.data.DataUtilitiesTest)</span></span> replaced boolean return with true for org/jfree/data/DataUtilities::equal &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_84'>84</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_84'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualDifferentArrays(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualDifferentArrays(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0 with 1 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualSameArrays(org.jfree.data.DataUtilitiesTest)</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualDifferentArrays(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualSameArrays(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_85'>85</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_85'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualSameArrays(org.jfree.data.DataUtilitiesTest)</span></span> removed call to java/util/Arrays::equals &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualDifferentArrays(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced equality check with false &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualSameArrays(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced equality check with true &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualSameArrays(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_86'>86</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_86'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualDifferentArrays(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0 with 1 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualDifferentArrays(org.jfree.data.DataUtilitiesTest)</span></span> replaced boolean return with true for org/jfree/data/DataUtilities::equal &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_89'>89</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_89'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualSameArrays(org.jfree.data.DataUtilitiesTest)</span></span> replaced boolean return with false for org/jfree/data/DataUtilities::equal &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>equal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testEqualSameArrays(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 1 with 0 &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_102'>102</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_102'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCloneNullSource(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/chart/util/ParamChecks::nullNotPermitted &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_104'>104</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_104'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCloneWithNullRow(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCloneWithNullRow(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCloneWithNullRow(org.jfree.data.DataUtilitiesTest)</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCloneValidArray(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0 with 1 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCloneWithNullRow(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_105'>105</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_105'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCloneWithNullRow(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced equality check with true &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCloneWithNullRow(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced equality check with false &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCloneWithNullRow(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_107'>107</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_107'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCloneWithNullRow(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0 with 1 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCloneWithNullRow(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0 with 1 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCloneWithNullRow(org.jfree.data.DataUtilitiesTest)</span></span> removed call to java/lang/System::arraycopy &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_111'>111</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_111'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCloneWithNullRow(org.jfree.data.DataUtilitiesTest)</span></span> replaced return value with null for org/jfree/data/DataUtilities::clone &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_124'>124</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_124'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalNullDataset(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/chart/util/ParamChecks::nullNotPermitted &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_125'>125</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_125'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalEmptyTable(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0.0 with 1.0 &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_126'>126</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_126'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalSingleRow(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/data/Values2D::getRowCount &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_127'>127</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_127'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalEmptyTable(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalEmptyTable(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalSingleRow(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalSingleRow(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0 with 1 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalEmptyTable(org.jfree.data.DataUtilitiesTest)</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_128'>128</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_128'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalSingleRow(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/data/Values2D::getValue &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_129'>129</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_129'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalSingleRow(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced equality check with false &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalSingleRow(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalAllNullCells(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced equality check with true &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_130'>130</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_130'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalSingleRow(org.jfree.data.DataUtilitiesTest)</span></span> removed call to java/lang/Number::doubleValue &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalSingleRow(org.jfree.data.DataUtilitiesTest)</span></span> Replaced double addition with subtraction &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_133'>133</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_133'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalSingleRow(org.jfree.data.DataUtilitiesTest)</span></span> replaced double return with 0.0d for org/jfree/data/DataUtilities::calculateColumnTotal &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_150'>150</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_150'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>none</span></span> removed call to org/jfree/chart/util/ParamChecks::nullNotPermitted &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateColumnTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateColumnTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateColumnTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalValidRows(org.jfree.data.DataUtilitiesTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_151'>151</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_151'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalValidRows(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0.0 with 1.0 &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_152'>152</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_152'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalValidRows(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/data/Values2D::getRowCount &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_153'>153</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_153'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalValidRows(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0 with 1 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalValidRows(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalValidRows(org.jfree.data.DataUtilitiesTest)</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalValidRows(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalValidRows(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_155'>155</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_155'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalValidRows(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</span>
+</div> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateColumnTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[35],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateColumnTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[35],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateColumnTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[35],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalValidRows(org.jfree.data.DataUtilitiesTest)</li> 
+</ul>
+</div></div> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>none</span></span> removed conditional - replaced comparison check with true &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateColumnTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[35],-mutator=org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_ORDER_IF]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateColumnTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[35],-mutator=org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_ORDER_IF]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateColumnTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[35],-mutator=org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_ORDER_IF]" style="display:none;">Covered by tests:
+<ul>
+<li>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalValidRows(org.jfree.data.DataUtilitiesTest)</li> 
+</ul>
+</div></div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalValidRows(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_156'>156</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_156'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalValidRows(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/data/Values2D::getValue &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_157'>157</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_157'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalValidRows(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>none</span></span> removed conditional - replaced equality check with true &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateColumnTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[46],-mutator=org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_EQUAL_IF]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateColumnTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[46],-mutator=org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_EQUAL_IF]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateColumnTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[46],-mutator=org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_EQUAL_IF]" style="display:none;">Covered by tests:
+<ul>
+<li>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalValidRows(org.jfree.data.DataUtilitiesTest)</li> 
+</ul>
+</div></div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalValidRows(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced equality check with false &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_158'>158</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_158'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalValidRows(org.jfree.data.DataUtilitiesTest)</span></span> removed call to java/lang/Number::doubleValue &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalValidRows(org.jfree.data.DataUtilitiesTest)</span></span> Replaced double addition with subtraction &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_162'>162</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_162'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateColumnTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalValidRows(org.jfree.data.DataUtilitiesTest)</span></span> replaced double return with 0.0d for org/jfree/data/DataUtilities::calculateColumnTotal &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_175'>175</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_175'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalNullDataset(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/chart/util/ParamChecks::nullNotPermitted &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_176'>176</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_176'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalNullCells(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0.0 with 1.0 &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_177'>177</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_177'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalNegativeRow(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/data/Values2D::getColumnCount &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_178'>178</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_178'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalNegativeRow(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalNullCells(org.jfree.data.DataUtilitiesTest)</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalNullCells(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalNegativeRow(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalNegativeRow(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0 with 1 &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_179'>179</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_179'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalNegativeRow(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/data/Values2D::getValue &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_180'>180</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_180'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalNullCells(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalMultipleColumns(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced equality check with false &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalNullCells(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced equality check with true &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_181'>181</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_181'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalMultipleColumns(org.jfree.data.DataUtilitiesTest)</span></span> Replaced double addition with subtraction &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalMultipleColumns(org.jfree.data.DataUtilitiesTest)</span></span> removed call to java/lang/Number::doubleValue &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_184'>184</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_184'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalMultipleColumns(org.jfree.data.DataUtilitiesTest)</span></span> replaced double return with 0.0d for org/jfree/data/DataUtilities::calculateRowTotal &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_201'>201</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_201'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>none</span></span> removed call to org/jfree/chart/util/ParamChecks::nullNotPermitted &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateRowTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateRowTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateRowTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalValidColumns(org.jfree.data.DataUtilitiesTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_202'>202</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_202'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalValidColumns(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0.0 with 1.0 &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_203'>203</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_203'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalValidColumns(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/data/Values2D::getColumnCount &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_204'>204</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_204'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalValidColumns(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalValidColumns(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalValidColumns(org.jfree.data.DataUtilitiesTest)</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalValidColumns(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0 with 1 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalValidColumns(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_206'>206</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_206'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalValidColumns(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</span>
+</div> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateRowTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[35],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateRowTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[35],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateRowTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[35],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalValidColumns(org.jfree.data.DataUtilitiesTest)</li> 
+</ul>
+</div></div> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>none</span></span> removed conditional - replaced comparison check with true &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateRowTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[35],-mutator=org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_ORDER_IF]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateRowTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[35],-mutator=org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_ORDER_IF]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateRowTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[35],-mutator=org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_ORDER_IF]" style="display:none;">Covered by tests:
+<ul>
+<li>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalValidColumns(org.jfree.data.DataUtilitiesTest)</li> 
+</ul>
+</div></div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalValidColumns(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_207'>207</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_207'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalValidColumns(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/data/Values2D::getValue &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_208'>208</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_208'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalValidColumns(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced equality check with false &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalValidColumns(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>none</span></span> removed conditional - replaced equality check with true &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateRowTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[46],-mutator=org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_EQUAL_IF]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateRowTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[46],-mutator=org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_EQUAL_IF]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=calculateRowTotal,-methodDesc=(Lorg/jfree/data/Values2D;I[I)D],-indexes=[46],-mutator=org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_EQUAL_IF]" style="display:none;">Covered by tests:
+<ul>
+<li>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalValidColumns(org.jfree.data.DataUtilitiesTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_209'>209</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_209'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalValidColumns(org.jfree.data.DataUtilitiesTest)</span></span> Replaced double addition with subtraction &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalValidColumns(org.jfree.data.DataUtilitiesTest)</span></span> removed call to java/lang/Number::doubleValue &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_213'>213</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_213'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateRowTotal<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalValidColumns(org.jfree.data.DataUtilitiesTest)</span></span> replaced double return with 0.0d for org/jfree/data/DataUtilities::calculateRowTotal &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_225'>225</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_225'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createNumberArray<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCreateNumberArrayNull(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/chart/util/ParamChecks::nullNotPermitted &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_227'>227</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_227'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createNumberArray<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCreateNumberArrayMultipleValues(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>createNumberArray<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCreateNumberArrayEmpty(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>createNumberArray<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCreateNumberArrayMultipleValues(org.jfree.data.DataUtilitiesTest)</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>createNumberArray<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.createNumberArray2D_singleElement(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0 with 1 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>createNumberArray<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.createNumberArray2D_singleElement(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_228'>228</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_228'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createNumberArray<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.createNumberArray2D_singleElement(org.jfree.data.DataUtilitiesTest)</span></span> removed call to java/lang/Double::&#60;init&#62; &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_230'>230</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_230'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createNumberArray<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.testCreateNumberArrayMultipleValues(org.jfree.data.DataUtilitiesTest)</span></span> replaced return value with null for org/jfree/data/DataUtilities::createNumberArray &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_242'>242</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_242'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createNumberArray2D<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.createNumberArray2D_nullInput(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/chart/util/ParamChecks::nullNotPermitted &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_245'>245</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_245'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createNumberArray2D<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.createNumberArray2D_emptyOuterArray(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>createNumberArray2D<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.createNumberArray2D_emptyOuterArray(org.jfree.data.DataUtilitiesTest)</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>createNumberArray2D<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.createNumberArray2D_singleElement(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>createNumberArray2D<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.createNumberArray2D_emptyOuterArray(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>createNumberArray2D<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.createNumberArray2D_singleElement(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0 with 1 &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_246'>246</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_246'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createNumberArray2D<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.createNumberArray2D_singleElement(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/data/DataUtilities::createNumberArray &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_248'>248</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_248'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createNumberArray2D<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.createNumberArray2D_emptyOuterArray(org.jfree.data.DataUtilitiesTest)</span></span> replaced return value with null for org/jfree/data/DataUtilities::createNumberArray2D &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_262'>262</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_262'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_nullInput(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/chart/util/ParamChecks::nullNotPermitted &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_263'>263</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_263'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/data/DefaultKeyedValues::&#60;init&#62; &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_264'>264</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_264'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0.0 with 1.0 &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_265'>265</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_265'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_singleValue(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_singleValue(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_singleValue(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/data/KeyedValues::getItemCount &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0 with 1 &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_266'>266</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_266'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_singleValue(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/data/KeyedValues::getValue &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_267'>267</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_267'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_singleValue(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced equality check with false &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_singleValue(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>none</span></span> removed conditional - replaced equality check with true &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=getCumulativePercentages,-methodDesc=(Lorg/jfree/data/KeyedValues;)Lorg/jfree/data/KeyedValues;],-indexes=[35],-mutator=org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_EQUAL_IF]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=getCumulativePercentages,-methodDesc=(Lorg/jfree/data/KeyedValues;)Lorg/jfree/data/KeyedValues;],-indexes=[35],-mutator=org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_EQUAL_IF]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=getCumulativePercentages,-methodDesc=(Lorg/jfree/data/KeyedValues;)Lorg/jfree/data/KeyedValues;],-indexes=[35],-mutator=org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_EQUAL_IF]" style="display:none;">Covered by tests:
+<ul>
+<li>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</li> <li>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_singleValue(org.jfree.data.DataUtilitiesTest)</li> <li>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_multiplePositiveValues(org.jfree.data.DataUtilitiesTest)</li> <li>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_multipleZeroValues(org.jfree.data.DataUtilitiesTest)</li> <li>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_mixedValues(org.jfree.data.DataUtilitiesTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_268'>268</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_268'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_singleValue(org.jfree.data.DataUtilitiesTest)</span></span> removed call to java/lang/Number::doubleValue &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_singleValue(org.jfree.data.DataUtilitiesTest)</span></span> Replaced double addition with subtraction &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_271'>271</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_271'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0.0 with 1.0 &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_272'>272</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_272'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</span></span> Substituted 0 with 1 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/data/KeyedValues::getItemCount &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_273'>273</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_273'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/data/KeyedValues::getValue &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_274'>274</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_274'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>none</span></span> removed conditional - replaced equality check with true &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=getCumulativePercentages,-methodDesc=(Lorg/jfree/data/KeyedValues;)Lorg/jfree/data/KeyedValues;],-indexes=[72],-mutator=org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_EQUAL_IF]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=getCumulativePercentages,-methodDesc=(Lorg/jfree/data/KeyedValues;)Lorg/jfree/data/KeyedValues;],-indexes=[72],-mutator=org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_EQUAL_IF]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=org.jfree.data.DataUtilities,-method=getCumulativePercentages,-methodDesc=(Lorg/jfree/data/KeyedValues;)Lorg/jfree/data/KeyedValues;],-indexes=[72],-mutator=org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_EQUAL_IF]" style="display:none;">Covered by tests:
+<ul>
+<li>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</li> <li>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_singleValue(org.jfree.data.DataUtilitiesTest)</li> <li>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_multiplePositiveValues(org.jfree.data.DataUtilitiesTest)</li> <li>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_multipleZeroValues(org.jfree.data.DataUtilitiesTest)</li> <li>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_mixedValues(org.jfree.data.DataUtilitiesTest)</li> 
+</ul>
+</div></div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</span></span> removed conditional - replaced equality check with false &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_275'>275</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_275'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_singleValue(org.jfree.data.DataUtilitiesTest)</span></span> Replaced double addition with subtraction &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</span></span> removed call to java/lang/Number::doubleValue &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_277'>277</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_277'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</span></span> Replaced double division with multiplication &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</span></span> removed call to java/lang/Double::&#60;init&#62; &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/data/DefaultKeyedValues::addValue &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</span></span> removed call to org/jfree/data/KeyedValues::getKey &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@9f0fc36_279'>279</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@9f0fc36_279'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCumulativePercentages<br/><b>Killed by : </b>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest)</span></span> replaced return value with null for org/jfree/data/DataUtilities::getCumulativePercentages &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>CONSTRUCTOR_CALLS</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>EXPERIMENTAL_ARGUMENT_PROPAGATION</li>
+<li class='mutator'>EXPERIMENTAL_BIG_DECIMAL</li>
+<li class='mutator'>EXPERIMENTAL_BIG_INTEGER</li>
+<li class='mutator'>EXPERIMENTAL_MEMBER_VARIABLE</li>
+<li class='mutator'>EXPERIMENTAL_NAKED_RECEIVER</li>
+<li class='mutator'>EXPERIMENTAL_REMOVE_SWITCH_MUTATOR_[0-99]</li>
+<li class='mutator'>EXPERIMENTAL_SWITCH</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INLINE_CONSTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NON_VOID_METHOD_CALLS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_ELSE</li>
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_IF</li>
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_ELSE</li>
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_IF</li>
+<li class='mutator'>REMOVE_INCREMENTS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalNegativeRow(org.jfree.data.DataUtilitiesTest) (1 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalNullCells(org.jfree.data.DataUtilitiesTest) (1 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalEmptyTable(org.jfree.data.DataUtilitiesTest) (1 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalRowTooLarge(org.jfree.data.DataUtilitiesTest) (1 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalMultipleColumns(org.jfree.data.DataUtilitiesTest) (1 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalSingleColumn(org.jfree.data.DataUtilitiesTest) (1 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalValidRows(org.jfree.data.DataUtilitiesTest) (1 ms)</li><li>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_zeroTotalSum(org.jfree.data.DataUtilitiesTest) (1 ms)</li><li>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_singleValue(org.jfree.data.DataUtilitiesTest) (1 ms)</li><li>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_multiplePositiveValues(org.jfree.data.DataUtilitiesTest) (2 ms)</li><li>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_multipleZeroValues(org.jfree.data.DataUtilitiesTest) (2 ms)</li><li>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_mixedValues(org.jfree.data.DataUtilitiesTest) (4 ms)</li><li>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_emptyDataset(org.jfree.data.DataUtilitiesTest) (35 ms)</li><li>org.jfree.data.DataUtilitiesTest.testEqualBothNull(org.jfree.data.DataUtilitiesTest) (0 ms)</li><li>org.jfree.data.DataUtilitiesTest.testEqualSameArrays(org.jfree.data.DataUtilitiesTest) (0 ms)</li><li>org.jfree.data.DataUtilitiesTest.testEqualSecondNull(org.jfree.data.DataUtilitiesTest) (0 ms)</li><li>org.jfree.data.DataUtilitiesTest.testEqualDifferentLengths(org.jfree.data.DataUtilitiesTest) (0 ms)</li><li>org.jfree.data.DataUtilitiesTest.testEqualFirstNull(org.jfree.data.DataUtilitiesTest) (0 ms)</li><li>org.jfree.data.DataUtilitiesTest.testEqualDifferentArrays(org.jfree.data.DataUtilitiesTest) (0 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCloneWithNullRow(org.jfree.data.DataUtilitiesTest) (0 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCloneValidArray(org.jfree.data.DataUtilitiesTest) (1 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalNullDataset(org.jfree.data.DataUtilitiesTest) (0 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalEmptyTable(org.jfree.data.DataUtilitiesTest) (1 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalSingleRow(org.jfree.data.DataUtilitiesTest) (1 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalNegativeColumn(org.jfree.data.DataUtilitiesTest) (2 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalMultipleRows(org.jfree.data.DataUtilitiesTest) (1 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalTooLargeMocked(org.jfree.data.DataUtilitiesTest) (2 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCalculateColumnTotalAllNullCells(org.jfree.data.DataUtilitiesTest) (6 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalValidColumns(org.jfree.data.DataUtilitiesTest) (1 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCreateNumberArrayMultipleValues(org.jfree.data.DataUtilitiesTest) (0 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCreateNumberArrayNull(org.jfree.data.DataUtilitiesTest) (0 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCreateNumberArrayEmpty(org.jfree.data.DataUtilitiesTest) (0 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCreateNumberArraySingleValue(org.jfree.data.DataUtilitiesTest) (0 ms)</li><li>org.jfree.data.DataUtilitiesTest.createNumberArray2D_singleElement(org.jfree.data.DataUtilitiesTest) (1 ms)</li><li>org.jfree.data.DataUtilitiesTest.createNumberArray2D_negativeAndZeroValues(org.jfree.data.DataUtilitiesTest) (2 ms)</li><li>org.jfree.data.DataUtilitiesTest.createNumberArray2D_emptyInnerArray(org.jfree.data.DataUtilitiesTest) (80 ms)</li><li>org.jfree.data.DataUtilitiesTest.createNumberArray2D_emptyOuterArray(org.jfree.data.DataUtilitiesTest) (1 ms)</li><li>org.jfree.data.DataUtilitiesTest.createNumberArray2D_nullInput(org.jfree.data.DataUtilitiesTest) (1 ms)</li><li>org.jfree.data.DataUtilitiesTest.getCumulativePercentages_nullInput(org.jfree.data.DataUtilitiesTest) (1 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCloneNullSource(org.jfree.data.DataUtilitiesTest) (0 ms)</li><li>org.jfree.data.DataUtilitiesTest.testCalculateRowTotalNullDataset(org.jfree.data.DataUtilitiesTest) (0 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.22.1
+
+</body>
+</html>

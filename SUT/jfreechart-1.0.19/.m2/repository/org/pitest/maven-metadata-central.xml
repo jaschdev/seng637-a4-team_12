@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <plugins>
+    <plugin>
+      <name>classycle</name>
+      <prefix>classycle</prefix>
+      <artifactId>classycle</artifactId>
+    </plugin>
+    <plugin>
+      <name>classycle-maven-plugin</name>
+      <prefix>classycle</prefix>
+      <artifactId>classycle-maven-plugin</artifactId>
+    </plugin>
+    <plugin>
+      <name>empty-jars-maven-plugin</name>
+      <prefix>empty-jars</prefix>
+      <artifactId>empty-jars-maven-plugin</artifactId>
+    </plugin>
+    <plugin>
+      <name>highwheel-bytecode</name>
+      <prefix>highwheel-bytecode</prefix>
+      <artifactId>highwheel-bytecode</artifactId>
+    </plugin>
+    <plugin>
+      <name>highwheel-maven</name>
+      <prefix>highwheel-maven</prefix>
+      <artifactId>highwheel-maven</artifactId>
+    </plugin>
+    <plugin>
+      <name>pitest-maven</name>
+      <prefix>pitest-maven</prefix>
+      <artifactId>pitest-maven</artifactId>
+    </plugin>
+  </plugins>
+</metadata>
