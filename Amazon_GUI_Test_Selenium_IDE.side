@@ -44,17 +44,10 @@
     }, {
       "id": "e8e54c40-3fb4-47a7-afbe-baf5a580fe9a",
       "comment": "",
-      "command": "type",
-      "target": "id=twotabsearchtextbox",
-      "targets": [
-        ["id=twotabsearchtextbox", "id"],
-        ["name=field-keywords", "name"],
-        ["css=#twotabsearchtextbox", "css:finder"],
-        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
-        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/input", "xpath:position"]
-      ],
-      "value": "laptop"
+      "command": "executeScript",
+      "target": "document.getElementById('twotabsearchtextbox').value='laptop'",
+      "targets": [],
+      "value": ""
     }, {
       "id": "68f35d3b-b361-40d4-b946-3ea703ad07cb",
       "comment": "",
@@ -145,17 +138,10 @@
     }, {
       "id": "830e729e-6e42-428a-971d-ddf098b29028",
       "comment": "",
-      "command": "type",
-      "target": "id=twotabsearchtextbox",
-      "targets": [
-        ["id=twotabsearchtextbox", "id"],
-        ["name=field-keywords", "name"],
-        ["css=#twotabsearchtextbox", "css:finder"],
-        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
-        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/input", "xpath:position"]
-      ],
-      "value": "head"
+      "command": "executeScript",
+      "target": "document.getElementById('twotabsearchtextbox').value='head'",
+      "targets": [],
+      "value": ""
     }, {
       "id": "862fcd6e-dcec-42e0-a576-47c4166de94e",
       "comment": "",
@@ -259,17 +245,10 @@
     }, {
       "id": "81634dbd-4810-4fd3-b016-4839befb83f6",
       "comment": "",
-      "command": "type",
-      "target": "id=twotabsearchtextbox",
-      "targets": [
-        ["id=twotabsearchtextbox", "id"],
-        ["name=field-keywords", "name"],
-        ["css=#twotabsearchtextbox", "css:finder"],
-        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
-        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/input", "xpath:position"]
-      ],
-      "value": "asdasfsa12345641"
+      "command": "executeScript",
+      "target": "document.getElementById('twotabsearchtextbox').value='asdasfsa12345641'",
+      "targets": [],
+      "value": ""
     }, {
       "id": "7047c02f-3ed7-49e0-b5ce-abd530b1c993",
       "comment": "",
@@ -338,31 +317,24 @@
     }, {
       "id": "1d2f59be-7c65-4eec-902c-9817814e6bbd",
       "comment": "",
-      "command": "type",
-      "target": "id=twotabsearchtextbox",
-      "targets": [
-        ["id=twotabsearchtextbox", "id"],
-        ["name=field-keywords", "name"],
-        ["css=#twotabsearchtextbox", "css:finder"],
-        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
-        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/input", "xpath:position"]
-      ],
-      "value": "laptop"
+      "command": "executeScript",
+      "target": "document.getElementById('twotabsearchtextbox').value='laptop'",
+      "targets": [],
+      "value": ""
     }, {
       "id": "e0098601-2ec2-4570-babd-ea20cc10fa5e",
       "comment": "",
-      "command": "sendKeys",
-      "target": "id=twotabsearchtextbox",
-      "targets": [
-        ["id=twotabsearchtextbox", "id"],
-        ["name=field-keywords", "name"],
-        ["css=#twotabsearchtextbox", "css:finder"],
-        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
-        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/input", "xpath:position"]
-      ],
-      "value": "${KEY_ENTER}"
+      "command": "executeScript",
+      "target": "document.getElementById('twotabsearchtextbox').form.submit()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d62a6adb-8b04-4387-b497-caf2c5874942",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.amazon.ca/s?k=laptop",
+      "targets": [],
+      "value": ""
     }, {
       "id": "70a6a2d9-bbc0-4fa3-9e82-10e7f23c72d3",
       "comment": "",
@@ -469,31 +441,17 @@
     }, {
       "id": "502b4efe-dc1c-49f8-abf1-e627b6a2b08d",
       "comment": "",
-      "command": "type",
-      "target": "id=twotabsearchtextbox",
-      "targets": [
-        ["id=twotabsearchtextbox", "id"],
-        ["name=field-keywords", "name"],
-        ["css=#twotabsearchtextbox", "css:finder"],
-        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
-        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/input", "xpath:position"]
-      ],
-      "value": "laptop"
+      "command": "executeScript",
+      "target": "document.getElementById('twotabsearchtextbox').value='laptop'",
+      "targets": [],
+      "value": ""
     }, {
       "id": "1f6df525-60b8-45fe-82a9-e9d384ea11d5",
       "comment": "",
-      "command": "sendKeys",
-      "target": "id=twotabsearchtextbox",
-      "targets": [
-        ["id=twotabsearchtextbox", "id"],
-        ["name=field-keywords", "name"],
-        ["css=#twotabsearchtextbox", "css:finder"],
-        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
-        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/input", "xpath:position"]
-      ],
-      "value": "${KEY_ENTER}"
+      "command": "executeScript",
+      "target": "document.getElementById('twotabsearchtextbox').form.submit()",
+      "targets": [],
+      "value": ""
     }, {
       "id": "9ca8d301-7fed-461f-9da2-7731c6ef0f30",
       "comment": "",
@@ -703,31 +661,17 @@
     }, {
       "id": "eb5bf311-ac06-452c-a55c-75d0cfcd92f2",
       "comment": "",
-      "command": "type",
-      "target": "id=twotabsearchtextbox",
-      "targets": [
-        ["id=twotabsearchtextbox", "id"],
-        ["name=field-keywords", "name"],
-        ["css=#twotabsearchtextbox", "css:finder"],
-        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
-        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/input", "xpath:position"]
-      ],
-      "value": "Lenovo 11.6\" 300e Chromebook"
+      "command": "executeScript",
+      "target": "document.getElementById('twotabsearchtextbox').value='Lenovo 11.6\" 300e Chromebook'",
+      "targets": [],
+      "value": ""
     }, {
       "id": "d59269d9-35f6-4bc3-9d52-17450041764f",
       "comment": "",
-      "command": "sendKeys",
-      "target": "id=twotabsearchtextbox",
-      "targets": [
-        ["id=twotabsearchtextbox", "id"],
-        ["name=field-keywords", "name"],
-        ["css=#twotabsearchtextbox", "css:finder"],
-        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
-        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/input", "xpath:position"]
-      ],
-      "value": "${KEY_ENTER}"
+      "command": "executeScript",
+      "target": "document.getElementById('twotabsearchtextbox').form.submit()",
+      "targets": [],
+      "value": ""
     }, {
       "id": "af85fa20-ff66-46b9-acc1-6d0e51b42097",
       "comment": "",
@@ -827,31 +771,24 @@
     }, {
       "id": "61e63314-4a4d-490d-8b1a-6cb41ae1c5c6",
       "comment": "",
-      "command": "type",
-      "target": "id=twotabsearchtextbox",
-      "targets": [
-        ["id=twotabsearchtextbox", "id"],
-        ["name=field-keywords", "name"],
-        ["css=#twotabsearchtextbox", "css:finder"],
-        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
-        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/input", "xpath:position"]
-      ],
-      "value": "The Nightingale"
+      "command": "executeScript",
+      "target": "document.getElementById('twotabsearchtextbox').value='The Nightingale'",
+      "targets": [],
+      "value": ""
     }, {
       "id": "7505aba8-af60-410b-89d4-3ab0bd05fcf8",
       "comment": "",
-      "command": "sendKeys",
-      "target": "id=twotabsearchtextbox",
-      "targets": [
-        ["id=twotabsearchtextbox", "id"],
-        ["name=field-keywords", "name"],
-        ["css=#twotabsearchtextbox", "css:finder"],
-        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
-        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/input", "xpath:position"]
-      ],
-      "value": "${KEY_ENTER}"
+      "command": "executeScript",
+      "target": "document.getElementById('twotabsearchtextbox').form.submit()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fe8317b3-1c08-4fc9-ac7d-8dbcf16618e1",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.amazon.ca/s?k=The+Nightingale",
+      "targets": [],
+      "value": ""
     }, {
       "id": "16abd6f8-0df6-443f-852f-14b9d020ca58",
       "comment": "",
@@ -940,31 +877,24 @@
     }, {
       "id": "17d59fea-44cb-4fa7-8b46-60073ec6c821",
       "comment": "",
-      "command": "type",
-      "target": "id=twotabsearchtextbox",
-      "targets": [
-        ["id=twotabsearchtextbox", "id"],
-        ["name=field-keywords", "name"],
-        ["css=#twotabsearchtextbox", "css:finder"],
-        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
-        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/input", "xpath:position"]
-      ],
-      "value": "TStrap Silicone Watch Straps 20mm"
+      "command": "executeScript",
+      "target": "document.getElementById('twotabsearchtextbox').value='TStrap Silicone Watch Straps 20mm'",
+      "targets": [],
+      "value": ""
     }, {
       "id": "134dcec0-676e-467c-91e8-739f091c05fb",
       "comment": "",
-      "command": "sendKeys",
-      "target": "id=twotabsearchtextbox",
-      "targets": [
-        ["id=twotabsearchtextbox", "id"],
-        ["name=field-keywords", "name"],
-        ["css=#twotabsearchtextbox", "css:finder"],
-        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
-        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/input", "xpath:position"]
-      ],
-      "value": "${KEY_ENTER}"
+      "command": "executeScript",
+      "target": "document.getElementById('twotabsearchtextbox').form.submit()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ae3f80b0-5396-4d72-87e3-de2e9379e673",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.amazon.ca/s?k=TStrap+Silicone+Watch+Straps+20mm",
+      "targets": [],
+      "value": ""
     }, {
       "id": "8472eb73-ecd4-41d9-b8b7-e2d482565e7d",
       "comment": "",
@@ -1071,31 +1001,17 @@
     }, {
       "id": "93072864-812f-438f-8f29-e011a6a57b22",
       "comment": "",
-      "command": "type",
-      "target": "id=twotabsearchtextbox",
-      "targets": [
-        ["id=twotabsearchtextbox", "id"],
-        ["name=field-keywords", "name"],
-        ["css=#twotabsearchtextbox", "css:finder"],
-        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
-        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/input", "xpath:position"]
-      ],
-      "value": "TStrap Silicone Watch Straps 20mm"
+      "command": "executeScript",
+      "target": "document.getElementById('twotabsearchtextbox').value='TStrap Silicone Watch Straps 20mm'",
+      "targets": [],
+      "value": ""
     }, {
       "id": "5d79428d-90ec-48a9-91a2-ae1b747b661a",
       "comment": "",
-      "command": "sendKeys",
-      "target": "id=twotabsearchtextbox",
-      "targets": [
-        ["id=twotabsearchtextbox", "id"],
-        ["name=field-keywords", "name"],
-        ["css=#twotabsearchtextbox", "css:finder"],
-        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
-        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/input", "xpath:position"]
-      ],
-      "value": "${KEY_ENTER}"
+      "command": "executeScript",
+      "target": "document.getElementById('twotabsearchtextbox').form.submit()",
+      "targets": [],
+      "value": ""
     }, {
       "id": "757d1f7b-338d-4614-8924-31f6a12e26af",
       "comment": "",
@@ -1176,7 +1092,7 @@
       "id": "0687da0a-d8f0-4397-8036-bdf3203a961f",
       "comment": "",
       "command": "assertText",
-      "target": "css=.a-declarative:nth-child(2) > span:nth-child(2) > span",
+      "target": "css=.sc-action-quantity .a-dropdown-prompt",
       "targets": [
         ["css=.a-declarative:nth-child(2) > span:nth-child(2) > span", "css:finder"],
         ["xpath=//div[@id='sc-active-4887e8b8-7230-4a54-bbe9-9e9266b1c181']/div[4]/div/div[3]/div/span/span/fieldset/div[2]/div/div/span[2]/span", "xpath:idRelative"],
@@ -1211,7 +1127,7 @@
       "id": "05965011-0db7-4fbb-8426-6b6b181da937",
       "comment": "",
       "command": "assertText",
-      "target": "css=.a-declarative:nth-child(2) > span:nth-child(2) > span",
+      "target": "css=.sc-action-quantity .a-dropdown-prompt",
       "targets": [
         ["css=.a-declarative:nth-child(2) > span:nth-child(2) > span", "css:finder"],
         ["xpath=//div[@id='sc-active-4887e8b8-7230-4a54-bbe9-9e9266b1c181']/div[4]/div/div[3]/div/span/span/fieldset/div[2]/div/div/span[2]/span", "xpath:idRelative"],
@@ -1233,7 +1149,7 @@
       "id": "bb65d685-6c99-4a1d-9487-dc189c082e27",
       "comment": "",
       "command": "assertText",
-      "target": "css=.a-declarative:nth-child(2) > span:nth-child(2) > span",
+      "target": "css=.sc-action-quantity .a-dropdown-prompt",
       "targets": [
         ["css=.a-declarative:nth-child(2) > span:nth-child(2) > span", "css:finder"],
         ["xpath=//div[@id='sc-active-4887e8b8-7230-4a54-bbe9-9e9266b1c181']/div[4]/div/div[3]/div/span/span/fieldset/div[2]/div/div/span[2]/span", "xpath:idRelative"],
@@ -1286,31 +1202,17 @@
     }, {
       "id": "a04ed81f-0554-4cee-a5ec-aae159be6f6c",
       "comment": "",
-      "command": "type",
-      "target": "id=twotabsearchtextbox",
-      "targets": [
-        ["id=twotabsearchtextbox", "id"],
-        ["name=field-keywords", "name"],
-        ["css=#twotabsearchtextbox", "css:finder"],
-        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
-        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/input", "xpath:position"]
-      ],
-      "value": "laptop"
+      "command": "executeScript",
+      "target": "document.getElementById('twotabsearchtextbox').value='laptop'",
+      "targets": [],
+      "value": ""
     }, {
       "id": "9d086e14-ac94-41ed-9825-0473a0d9f636",
       "comment": "",
-      "command": "sendKeys",
-      "target": "id=twotabsearchtextbox",
-      "targets": [
-        ["id=twotabsearchtextbox", "id"],
-        ["name=field-keywords", "name"],
-        ["css=#twotabsearchtextbox", "css:finder"],
-        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
-        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/input", "xpath:position"]
-      ],
-      "value": "${KEY_ENTER}"
+      "command": "executeScript",
+      "target": "document.getElementById('twotabsearchtextbox').form.submit()",
+      "targets": [],
+      "value": ""
     }, {
       "id": "b57ce3a0-6c82-4d5a-8f64-dd8ce61817dc",
       "comment": "",
